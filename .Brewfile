@@ -1,6 +1,7 @@
 # QOL CLI Tools
 brew "bat"
 brew "fish"
+brew "fzf"
 brew "git"
 brew "lsd"
 brew "mise"
