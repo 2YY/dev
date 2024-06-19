@@ -141,7 +141,7 @@ jobs:
 
       - name: Check if `starship.toml` exists
         run: |
-          if find "$HOME/.config/starship" -name "starship.toml"; then
+          if find "$HOME/.config" -name "starship.toml"; then
             echo "The file found, test passed!"
           else
             echo "The file not found, test failed!"
