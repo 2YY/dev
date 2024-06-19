@@ -5,7 +5,7 @@ mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/fish
 
 # Homebrew
-cp -f .configs/.Brewfile ~/.Brewfile
+cp -f ./configs/.Brewfile ~/.Brewfile
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew bundle --global
 
