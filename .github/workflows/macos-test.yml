@@ -1,0 +1,122 @@
+name: Test `install.sh`
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+      - main
+      - develop
+
+jobs:
+  test-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run environment setup script
+        run: |
+          chmod +x ./scripts/install.sh
+          ./scripts/install.sh
+
+      - name: Verify `bat` command is available
+        run: |
+          if ! command -v bat &> /dev/null
+          then
+            echo "Command 'bat' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'bat' is available, test passed!"
+
+      - name: Verify `brew` command is available
+        run: |
+          if ! command -v brew &> /dev/null
+          then
+            echo "Command 'brew' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'brew' is available, test passed!"
+
+      - name: Verify `fish` command is available
+        run: |
+          if ! command -v fish &> /dev/null
+          then
+            echo "Command 'fish' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'fish' is available, test passed!"
+
+      - name: Verify `fzf` command is available
+        run: |
+          if ! command -v fzf &> /dev/null
+          then
+            echo "Command 'fzf' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'fzf' is available, test passed!"
+
+      - name: Verify `git` command is available
+        run: |
+          if ! command -v git &> /dev/null
+          then
+            echo "Command 'git' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'git' is available, test passed!"
+
+      - name: Verify `lsd` command is available
+        run: |
+          if ! command -v lsd &> /dev/null
+          then
+            echo "Command 'lsd' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'lsd' is available, test passed!"
+
+      - name: Verify `mise` command is available
+        run: |
+          if ! command -v mise &> /dev/null
+          then
+            echo "Command 'mise' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'mise' is available, test passed!"
+
+      - name: Verify `python3` command is available
+        run: |
+          if ! command -v python3 &> /dev/null
+          then
+            echo "Command 'python3' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'python3' is available, test passed!"
+
+      - name: Verify `starship` command is available
+        run: |
+          if ! command -v starship &> /dev/null
+          then
+            echo "Command 'starship' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'starship' is available, test passed!"
+
+      - name: Verify `zoxide` command is available
+        run: |
+          if ! command -v zoxide &> /dev/null
+          then
+            echo "Command 'zoxide' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'zoxide' is available, test passed!"
+
+      - name: Check if the default shell is fish
+        run: |
+          if [ "$SHELL" = "/usr/bin/fish" ] || [ "$SHELL" = "/bin/fish" ]; then
+            echo "The default shell is fish."
+          else
+            echo "The default shell is NOT fish."
+            exit 1
+          fi
