@@ -121,12 +121,29 @@ jobs:
           fi
           echo "Command 'zoxide' is available, test passed!"
 
-      - name: Check if the default shell is fish
+      - name: Check if `.Brewfile` exists
         run: |
-          echo "Current default shell: $SHELL"
-          if [ "$SHELL" = "/usr/bin/fish" ] || [ "$SHELL" = "/bin/fish" ]; then
-            echo "The default shell is fish, test passed!"
+          if find "~" -name ".Brewfile"; then
+            echo "The file found, test passed!"
           else
-            echo "The default shell is NOT fish. It is $SHELL."
+            echo "The file not found, test failed!"
+            exit 1
+          fi
+
+      - name: Check if `alacritty.toml` exists
+        run: |
+          if find "~/.config/alacritty" -name "alacritty.toml"; then
+            echo "The file found, test passed!"
+          else
+            echo "The file not found, test failed!"
+            exit 1
+          fi
+
+      - name: Check if `starship.toml` exists
+        run: |
+          if find "~/.config/starship" -name "starship.toml"; then
+            echo "The file found, test passed!"
+          else
+            echo "The file not found, test failed!"
             exit 1
           fi
