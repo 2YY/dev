@@ -123,7 +123,7 @@ jobs:
 
       - name: Check if `.Brewfile` exists
         run: |
-          if find "~" -name ".Brewfile"; then
+          if find "$HOME" -name ".Brewfile"; then
             echo "The file found, test passed!"
           else
             echo "The file not found, test failed!"
@@ -132,7 +132,7 @@ jobs:
 
       - name: Check if `alacritty.toml` exists
         run: |
-          if find "~/.config/alacritty" -name "alacritty.toml"; then
+          if find "$HOME/.config/alacritty" -name "alacritty.toml"; then
             echo "The file found, test passed!"
           else
             echo "The file not found, test failed!"
@@ -141,7 +141,7 @@ jobs:
 
       - name: Check if `starship.toml` exists
         run: |
-          if find "~/.config/starship" -name "starship.toml"; then
+          if find "$HOME/.config/starship" -name "starship.toml"; then
             echo "The file found, test passed!"
           else
             echo "The file not found, test failed!"
