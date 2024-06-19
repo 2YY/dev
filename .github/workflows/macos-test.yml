@@ -123,9 +123,10 @@ jobs:
 
       - name: Check if the default shell is fish
         run: |
+          echo "Current default shell: $SHELL"
           if [ "$SHELL" = "/usr/bin/fish" ] || [ "$SHELL" = "/bin/fish" ]; then
-            echo "The default shell is fish."
+            echo "The default shell is fish, test passed!"
           else
-            echo "The default shell is NOT fish."
+            echo "The default shell is NOT fish. It is $SHELL."
             exit 1
           fi
