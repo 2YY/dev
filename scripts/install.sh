@@ -15,6 +15,8 @@ cp -f ./configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 # Dev Container CLI
 mise install node@16
 mise install python@3
+mise use -g node@16
+mise use -g python@3
 xcode-select --install
 npm install -g node-gyp @devcontainers/cli
 
