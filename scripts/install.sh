@@ -5,12 +5,12 @@ mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/fish
 
 # Homebrew
-cp -f .Brewfile ~/.Brewfile
+cp -f .configs/.Brewfile ~/.Brewfile
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew bundle --global
 
 # Alacritty
-cp -f alacritty.yml ~/.config/alacritty/alacritty.yml
+cp -f ./configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # Dev Container CLI
 mise install node@16
@@ -23,7 +23,7 @@ FISH_PATH=$(which fish)
 chsh -s "$FISH_PATH"
 
 # starship
-cp -f ./starship.toml ~/.config/starship.toml
+cp -f ./configs/starship.toml ~/.config/starship.toml
 echo 'starship init fish | source' >> ~/.config/fish/config.fish
 
 # zoxide
