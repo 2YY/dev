@@ -85,6 +85,15 @@ jobs:
           fi
           echo "Command 'mise' is available, test passed!"
 
+      - name: Verify `node` command is available
+        run: |
+          if ! command -v node &> /dev/null
+          then
+            echo "Command 'node' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'node' is available, test passed!"
+
       - name: Verify `python3` command is available
         run: |
           if ! command -v python3 &> /dev/null
