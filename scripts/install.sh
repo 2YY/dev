@@ -7,6 +7,9 @@ source ./scripts/functions/contains_string.sh
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/fish
 
+# Files
+[ ! -f "$HOME/.config/fish/config.fish" ] && touch "$HOME/.config/fish/config.fish"
+
 # Homebrew
 cp -f ./configs/.Brewfile ~/.Brewfile
 if ! exists_command "brew"; then
