@@ -31,12 +31,12 @@ chsh -s "$FISH_PATH"
 
 # starship
 cp -f ./configs/starship.toml ~/.config/starship.toml
-if contains_string "starship" "~/.config/starship.toml"; then
+if ! contains_string "starship" "~/.config/starship.toml"; then
   echo 'starship init fish | source' >> ~/.config/fish/config.fish
 fi
 
 # zoxide
-if contains_string "zoxide" "~/.config/fish/config.fish"; then
+if ! contains_string "zoxide" "~/.config/fish/config.fish"; then
   echo 'eval (zoxide init fish)' >> ~/.config/fish/config.fish
 fi
 
