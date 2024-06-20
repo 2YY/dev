@@ -9,7 +9,7 @@ mkdir -p ~/.config/fish
 
 # Homebrew
 cp -f ./configs/.Brewfile ~/.Brewfile
-if ! command_exists "brew"; then
+if ! exists_comamnd "brew"; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 brew bundle --global
