@@ -9,7 +9,7 @@ mkdir -p ~/.config/fish
 
 # Homebrew
 cp -f ./configs/.Brewfile ~/.Brewfile
-if ! command_exists "$command_to_check"; then
+if ! command_exists "brew"; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 brew bundle --global
@@ -31,7 +31,7 @@ chsh -s "$FISH_PATH"
 
 # starship
 cp -f ./configs/starship.toml ~/.config/starship.toml
-if ! contains_string "starship" "~/.config/starship.toml"; then
+if ! contains_string "starship" "~/.config/fish/config.fish"; then
   echo 'starship init fish | source' >> ~/.config/fish/config.fish
 fi
 
