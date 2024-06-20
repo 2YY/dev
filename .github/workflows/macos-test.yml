@@ -40,6 +40,15 @@ jobs:
           fi
           echo "Command 'brew' is available, test passed!"
 
+      - name: Verify `ffmpeg` command is available
+        run: |
+          if ! command -v ffmpeg &> /dev/null
+          then
+            echo "Command 'ffmpeg' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'ffmpeg' is available, test passed!"
+
       - name: Verify `fish` command is available
         run: |
           if ! command -v fish &> /dev/null
@@ -102,6 +111,15 @@ jobs:
             exit 1
           fi
           echo "Command 'python3' is available, test passed!"
+
+      - name: Verify `rg` command is available
+        run: |
+          if ! command -v rg &> /dev/null
+          then
+            echo "Command 'rg' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'rg' is available, test passed!"
 
       - name: Verify `starship` command is available
         run: |
