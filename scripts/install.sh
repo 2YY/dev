@@ -1,12 +1,17 @@
 #!/bin/sh
 
+source ./scripts/functions/exists_command.sh
+source ./scripts/functions/contains_string.sh
+
 # Directories
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/fish
 
 # Homebrew
 cp -f ./configs/.Brewfile ~/.Brewfile
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command_exists "$command_to_check"; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 brew bundle --global
 
 # Alacritty
@@ -17,7 +22,7 @@ mise install node@16
 mise install python@3
 mise use -g node@16
 mise use -g python@3
-xcode-select --install
+xcode-select --install || true
 npm install -g node-gyp @devcontainers/cli
 
 # fish
@@ -26,9 +31,13 @@ chsh -s "$FISH_PATH"
 
 # starship
 cp -f ./configs/starship.toml ~/.config/starship.toml
-echo 'starship init fish | source' >> ~/.config/fish/config.fish
+if contains_string "starship" "~/.config/starship.toml"; then
+  echo 'starship init fish | source' >> ~/.config/fish/config.fish
+fi
 
 # zoxide
-echo 'eval (zoxide init fish)' >> ~/.config/fish/config.fish
+if contains_string "zoxide" "~/.config/fish/config.fish"; then
+  echo 'eval (zoxide init fish)' >> ~/.config/fish/config.fish
+fi
 
 # TODO: `nvim.sh` のシムリンクを /usr/local/bin に作成し、`nvim` コマンドで実行できるようにする
