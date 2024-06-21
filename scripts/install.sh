@@ -1,5 +1,12 @@
 #!/bin/sh
 
+while getopts "n:e:" opt; do
+  case $opt in
+    n) GIT_USER_NAME="$OPTARG" ;;
+    e) GIT_USER_EMAIL="$OPTARG" ;;
+  esac
+done
+
 source ./scripts/functions/exists_command.sh
 source ./scripts/functions/contains_string.sh
 
@@ -20,6 +27,12 @@ brew bundle --global
 # Alacritty
 cp -f ./configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 
+# AstroNvim
+if [ ! -d "$HOME/.config/nvim" ]; then
+  git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+  git clone https://github.com/2YY/astronvim_config ~/.config/nvim/lua/user
+fi
+
 # Dev Container CLI
 mise install node@16
 mise install python@3
@@ -31,6 +44,18 @@ npm install -g node-gyp @devcontainers/cli
 # fish
 FISH_PATH=$(which fish)
 chsh -s "$FISH_PATH"
+if ! contains_string "fish_greeting" "$HOME/.config/fish/config.fish"; then
+  echo 'set fish_greeting' >> ~/.config/fish/config.fish
+fi
+if ! contains_string "accept-autosuggestion" "$HOME/.config/fish/config.fish"; then
+  echo 'bind \t accept-autosuggestion' >> ~/.config/fish/config.fish
+fi
+
+# Git
+if [ -n "$GIT_USER_NAME" ] && [ -n "$GIT_USER_EMAIL" ]; then
+  git config --global user.name "$GIT_USER_NAME"
+  git config --global user.email "$GIT_USER_EMAIL"
+fi
 
 # starship
 cp -f ./configs/starship.toml ~/.config/starship.toml
@@ -43,4 +68,3 @@ if ! contains_string "zoxide" "$HOME/.config/fish/config.fish"; then
   echo 'eval (zoxide init fish)' >> ~/.config/fish/config.fish
 fi
 
-# TODO: `nvim.sh` のシムリンクを /usr/local/bin に作成し、`nvim` コマンドで実行できるようにする
