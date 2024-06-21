@@ -9,6 +9,7 @@ done
 
 source ./scripts/functions/exists_command.sh
 source ./scripts/functions/contains_string.sh
+source ./scripts/functions/is_ubuntu.sh
 
 # Directories
 mkdir -p ~/.config/alacritty
@@ -21,6 +22,10 @@ mkdir -p ~/.config/fish
 cp -f ./configs/.Brewfile ~/.Brewfile
 if ! exists_command "brew"; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if is_ubuntu; then
+    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> "$HOME/.bashrc"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
 fi
 brew bundle --global
 
