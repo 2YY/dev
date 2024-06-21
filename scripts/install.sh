@@ -68,4 +68,3 @@ if ! contains_string "zoxide" "$HOME/.config/fish/config.fish"; then
   echo 'eval (zoxide init fish)' >> ~/.config/fish/config.fish
 fi
 
-# TODO: `nvim.sh` のシムリンクを /usr/local/bin に作成し、`nvim` コマンドで実行できるようにする
