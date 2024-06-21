@@ -20,6 +20,14 @@ jobs:
         run: ./scripts/install.ps1 -n "dummy" -e "dummy@example.com"
         shell: pwsh
 
+      - name: Should `choco` comamnd is available
+        shell: pwsh
+        run: |
+          if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
+            Write-Error "Chocolatey (choco) is not installed."
+            exit 1
+          }
+
       - name: Should Git username configured
         run: |
           if [ "$(git config --global user.name)" != "dummy" ]; then
