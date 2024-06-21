@@ -28,7 +28,6 @@ brew bundle --global
 cp -f ./configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # AstroNvim
-[ ! -d "$HOME/.config/nvim" ] && 
 if [ ! -d "$HOME/.config/nvim" ]; then
   git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
   git clone https://github.com/2YY/astronvim_config ~/.config/nvim/lua/user
