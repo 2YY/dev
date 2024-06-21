@@ -3,10 +3,11 @@ name: Test Git Config on Windows
 on:
   push:
     branches:
-      - main  # テストを実行するブランチを指定
+      - main
+      - develop
   pull_request:
     branches:
-      - main  # プルリクエスト時にもテストを実行
+      - '**'
 
 jobs:
   test-git-config-windows:
@@ -21,7 +22,7 @@ jobs:
           ./configs/install.ps1 -n "dummy" -e "dummy@example.com"
         shell: pwsh
 
-      - name: Verify Git user.name
+      - name: Should Git username configured
         run: |
           if [ "$(git config --global user.name)" != "dummy" ]; then
             echo "Expected Git user.name to be 'dummy', but found '$(git config --global user.name)'"
@@ -29,7 +30,7 @@ jobs:
           fi
         shell: bash
 
-      - name: Verify Git user.email
+      - name: Should Git user email configured
         run: |
           if [ "$(git config --global user.email)" != "dummy@example.com" ]; then
             echo "Expected Git user.email to be 'dummy@example.com', but found '$(git config --global user.email)'"
@@ -37,6 +38,3 @@ jobs:
           fi
         shell: bash
 
-      - name: Output success message
-        run: echo "Git user.name and user.email are correctly set."
-        shell: bash
