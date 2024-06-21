@@ -9,6 +9,7 @@ done
 
 source ./scripts/functions/exists_command.sh
 source ./scripts/functions/contains_string.sh
+source ./scripts/functions/is_ubuntu.sh
 
 # Directories
 mkdir -p ~/.config/alacritty
