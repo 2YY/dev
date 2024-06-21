@@ -1,4 +1,4 @@
-name: Test Git Config on Windows
+name: Test `install.ps1`
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - '**'
 
 jobs:
-  test-git-config-windows:
+  test-windows:
     runs-on: windows-latest
 
     steps:
