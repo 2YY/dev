@@ -2,8 +2,8 @@
 
 while getopts "n:e:" opt; do
   case $opt in
-    n) USER_NAME="$OPTARG" ;;
-    e) USER_EMAIL="$OPTARG" ;;
+    n) GIT_USER_NAME="$OPTARG" ;;
+    e) GIT_USER_EMAIL="$OPTARG" ;;
   esac
 done
 
