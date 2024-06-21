@@ -1,5 +1,12 @@
 #!/bin/sh
 
+while getopts "n:e:" opt; do
+  case $opt in
+    n) USER_NAME="$OPTARG" ;;
+    e) USER_EMAIL="$OPTARG" ;;
+  esac
+done
+
 source ./scripts/functions/exists_command.sh
 source ./scripts/functions/contains_string.sh
 
@@ -46,8 +53,10 @@ if ! contains_string "accept-autosuggestion" "$HOME/.config/fish/config.fish"; t
 fi
 
 # Git
-git config --global user.name "2YY"
-git config --global user.email hkgeuobmaoakneotpuhtesnotekheo@gmail.com
+if [ -n "$GIT_USER_NAME" ] && [ -n "$GIT_USER_EMAIL" ]; then
+    git config --global user.name "$GIT_USER_NAME"
+    git config --global user.email "$GIT_USER_EMAIL"
+fi
 
 # starship
 cp -f ./configs/starship.toml ~/.config/starship.toml
