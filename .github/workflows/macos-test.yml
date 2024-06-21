@@ -20,7 +20,7 @@ jobs:
       - name: Run environment setup script
         run: |
           chmod +x ./scripts/install.sh
-          ./scripts/install.sh
+          ./scripts/install.sh -n dummy -e dummy@example.com
 
       - name: Verify `bat` command is available
         run: |
