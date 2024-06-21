@@ -94,6 +94,15 @@ jobs:
           fi
           echo "Command 'mise' is available, test passed!"
 
+      - name: Verify `nvim` command is available
+        run: |
+          if ! command -v nvim &> /dev/null
+          then
+            echo "Command 'nvim' not found, test failed!"
+            exit 1
+          fi
+          echo "Command 'nvim' is available, test passed!"
+
       - name: Verify `node` command is available
         run: |
           if ! command -v node &> /dev/null
