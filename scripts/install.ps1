@@ -17,6 +17,9 @@ for ($i = 0; $i -lt $args.Length; $i++) {
    }
 }
 
+# Chocolatey
+choco install ./configs/packages.config -y
+
 # Alacritty
 $alacrittyShellConfig = @"
 shell:
