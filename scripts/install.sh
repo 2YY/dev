@@ -22,10 +22,10 @@ mkdir -p ~/.config/fish
 cp -f ./configs/.Brewfile ~/.Brewfile
 if ! exists_command "brew"; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-if is_ubuntu; then
-  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> "$HOME/.bashrc"
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  if is_ubuntu; then
+    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> "$HOME/.bashrc"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
 fi
 brew bundle --global
 
