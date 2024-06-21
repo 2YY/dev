@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Git user and email
+      - name: Run environment setup script
         run: ./scripts/install.ps1 -n "dummy" -e "dummy@example.com"
         shell: pwsh
 
