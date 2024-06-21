@@ -31,6 +31,12 @@ npm install -g node-gyp @devcontainers/cli
 # fish
 FISH_PATH=$(which fish)
 chsh -s "$FISH_PATH"
+if ! contains_string "fish_greeting" "$HOME/.config/fish/config.fish"; then
+  echo 'set fish_greeting' >> ~/.config/fish/config.fish
+fi
+if ! contains_string "accept-autosuggestion" "$HOME/.config/fish/config.fish"; then
+  echo 'bind \t accept-autosuggestion' >> ~/.config/fish/config.fish
+fi
 
 # starship
 cp -f ./configs/starship.toml ~/.config/starship.toml
