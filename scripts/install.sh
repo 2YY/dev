@@ -77,6 +77,6 @@ fi
 
 # zoxide
 if ! contains_string "zoxide" "$HOME/.config/fish/config.fish"; then
-  echo 'eval (zoxide init fish)' >> ~/.config/fish/config.fish
+  echo 'zoxide init fish | source' >> ~/.config/fish/config.fish
 fi
 
