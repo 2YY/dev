@@ -35,9 +35,7 @@ cp -f ./configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 # AstroNvim
 if [ ! -d "$HOME/.config/nvim" ]; then
   # git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-  git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
-  rm -rf ~/.config/nvim/.git
-  git clone https://github.com/2YY/astronvim_config ~/.config/nvim/lua/user
+  git clone https://github.com/2YY/astronvim_config ~/.config/nvim
 fi
 
 # Dev Container CLI
