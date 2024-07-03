@@ -30,10 +30,7 @@ fi
 brew bundle --global
 
 # Alacritty
-ALACRITTY_CONFIG_PATH="$HOME/.config/alacritty/alacritty.toml"
-FISH_SHELL_CONFIG="\n[shell]\nprogram = \"/usr/local/bin/fish\""
-cp -f ./configs/alacritty.toml "$ALACRITTY_CONFIG_PATH"
-grep -q "\[shell\]" "$ALACRITTY_CONFIG_PATH" || printf "$FISH_SHELL_CONFIG" | sudo tee -a "$ALACRITTY_CONFIG_PATH" > /dev/null
+cp -f ./configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # AstroNvim
 if [ ! -d "$HOME/.config/nvim" ]; then
