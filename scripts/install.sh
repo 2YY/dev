@@ -63,7 +63,7 @@ if ! contains_string "fish_greeting" "$HOME/.config/fish/config.fish"; then
   echo 'set fish_greeting' >> ~/.config/fish/config.fish
 fi
 if ! contains_string "accept-autosuggestion" "$HOME/.config/fish/config.fish"; then
-  echo 'bind \t accept-autosuggestion' >> ~/.config/fish/config.fish
+  printf 'bind \\t accept-autosuggestion\n' >> "$HOME/.config/fish/config.fish"
 fi
 
 # Git
