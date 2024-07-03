@@ -1,8 +1,10 @@
 # QOL CLI Tools
 brew "bat"
+brew "bottom"
 brew "ffmpeg"
 brew "fish"
 brew "fzf"
+brew "gdu"
 brew "git"
 brew "lazygit"
 brew "lsd"
