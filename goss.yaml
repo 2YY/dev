@@ -1,5 +1,57 @@
 command:
+  bat:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  bottom:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  ffmpeg:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  fish:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  fzf:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  gdu:
+    exit-status: 0
+    stdout: []
+    stderr: []
   git:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  lazygit:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  lsd:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  mise:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  nvim:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  rg:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  starship:
+    exit-status: 0
+    stdout: []
+    stderr: []
+  z:
     exit-status: 0
     stdout: []
     stderr: []
