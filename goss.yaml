@@ -55,3 +55,9 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
+
+file:
+  /etc/shells:
+    exists: true
+    contains:
+      - "/usr/local/bin/fish"
