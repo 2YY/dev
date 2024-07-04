@@ -1,0 +1,5 @@
+command:
+  git:
+    exit-status: 0
+    stdout: []
+    stderr: []
