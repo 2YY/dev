@@ -27,7 +27,8 @@ jobs:
 
       - name: Testing by Goss
         run: |
-          curl -L https://github.com/aelsabbahy/goss/releases/download/v0.3.16/oss-darwin-arm64 -o goss
+          curl -L https://github.com/goss-org/goss/releases/download/v0.4.7/goss-darwin-arm64 -o goss
+          ls
           chmod +x goss
           ./goss validate -f documentation
 
