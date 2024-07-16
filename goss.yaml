@@ -79,9 +79,9 @@ file:
     exists: true
     contains:
       - "/usr/local/bin/fish"
-  "{{ env.HOME }}/.Brewfile":
+  {{ .Env.HOME }}/.Brewfile:
     exists: true
-  "{{ env.HOME }}/.config/alacritty/alacritty.toml":
+  {{ .Env.HOME }}/.config/alacritty/alacritty.toml:
     exists: true
-  "{{ env.HOME }}/.config/starship.toml":
+  {{ .Env.HOME }}/.config/starship.toml:
     exists: true
