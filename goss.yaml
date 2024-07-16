@@ -63,8 +63,25 @@ command:
       - "/usr/local/bin/fish"
     stderr: []
 
+  git-config-user-name:
+    exec: "git config --global user.name"
+    exit-status: 0
+    stdout:
+      - "dummy"
+  git-config-user-email:
+    exec: "git config --global user.email"
+    exit-status: 0
+    stdout:
+      - "dummy@example.com"
+
 file:
   /etc/shells:
     exists: true
     contains:
       - "/usr/local/bin/fish"
+  "{{ env.HOME }}/.Brewfile":
+    exists: true
+  "{{ env.HOME }}/.config/alacritty/alacritty.toml":
+    exists: true
+  "{{ env.HOME }}/.config/starship.toml":
+    exists: true
