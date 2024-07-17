@@ -1,57 +1,57 @@
 command:
-  bat:
+  "bat -v":
     exit-status: 0
     stdout: []
     stderr: []
-  bottom:
+  "bottom -v":
     exit-status: 0
     stdout: []
     stderr: []
-  ffmpeg:
+  "ffmpeg -v":
     exit-status: 0
     stdout: []
     stderr: []
-  fish:
+  "fish -v":
     exit-status: 0
     stdout: []
     stderr: []
-  fzf:
+  "fzf -v":
     exit-status: 0
     stdout: []
     stderr: []
-  gdu:
+  "gdu -v":
     exit-status: 0
     stdout: []
     stderr: []
-  git:
+  "git -v":
     exit-status: 0
     stdout: []
     stderr: []
-  lazygit:
+  "lazygit -v":
     exit-status: 0
     stdout: []
     stderr: []
-  lsd:
+  "lsd -v":
     exit-status: 0
     stdout: []
     stderr: []
-  mise:
+  "mise -v":
     exit-status: 0
     stdout: []
     stderr: []
-  nvim:
+  "nvim -v":
     exit-status: 0
     stdout: []
     stderr: []
-  rg:
+  "rg -v":
     exit-status: 0
     stdout: []
     stderr: []
-  starship:
+  "starship -v":
     exit-status: 0
     stdout: []
     stderr: []
-  z:
+  "z":
     exit-status: 0
     stdout: []
     stderr: []
