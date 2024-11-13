@@ -1,0 +1,36 @@
+name: Test `install.sh`
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest]
+
+    runs-on: ${{ matrix.os }} 
+
+    env:
+      GOSS_USE_ALPHA: 1
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run environment setup script
+        run: |
+          chmod +x ./scripts/install.sh
+          ./scripts/install.sh -n dummy -e dummy@example.com
+
+      - name: Testing by Goss
+        run: |
+          curl -L https://github.com/goss-org/goss/releases/download/v0.4.7/goss-darwin-arm64 -o goss
+          chmod +x goss
+          ./goss validate -f documentation
+
