@@ -1,9 +1,9 @@
 command:
-  "bat -v":
+  "bat --help":
     exit-status: 0
     stdout: []
     stderr: []
-  "bottom -v":
+  "btm --help":
     exit-status: 0
     stdout: []
     stderr: []
@@ -19,7 +19,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "gdu -v":
+  "gdu-go -v":
     exit-status: 0
     stdout: []
     stderr: []
@@ -31,7 +31,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "lsd -v":
+  "lsd --help":
     exit-status: 0
     stdout: []
     stderr: []
@@ -43,7 +43,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "rg -v":
+  "rg --help":
     exit-status: 0
     stdout: []
     stderr: []
@@ -51,7 +51,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "z":
+  "which z":
     exit-status: 0
     stdout: []
     stderr: []
