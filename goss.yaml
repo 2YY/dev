@@ -60,7 +60,7 @@ command:
     exec: "getent passwd $USER | cut -d':' -f7"
     exit-status: 0
     stdout:
-      - "/usr/local/bin/fish"
+      - "/opt/homebrew/bin/fish"
     stderr: []
 
   git-config-user-name:
