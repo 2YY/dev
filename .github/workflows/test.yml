@@ -28,6 +28,11 @@ jobs:
           chmod +x ./scripts/install.sh
           ./scripts/install.sh -n dummy -e dummy@example.com
 
+
+      - name: Cat for Debug
+        run: |
+          cat /usr/local/bin/fish
+
       - name: Testing by Goss
         run: |
           curl -L https://github.com/goss-org/goss/releases/download/v0.4.7/goss-darwin-arm64 -o goss
