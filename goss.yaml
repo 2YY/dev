@@ -47,7 +47,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "starship -v":
+  "starship --help":
     exit-status: 0
     stdout: []
     stderr: []
