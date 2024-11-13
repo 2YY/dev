@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/bin/bash
+
+function is_ubuntu() {
+  if [ -f /etc/os-release ] && grep -qi 'ubuntu' /etc/os-release; then
+    return 0
+  else
+    return 1
+  fi
+}
 
 while getopts "n:e:" opt; do
   case $opt in
@@ -7,9 +15,14 @@ while getopts "n:e:" opt; do
   esac
 done
 
+if ! exists_command "source"; then
+  if is_ubuntu; then
+    sudo apt-get install -y build-essential checkinstall
+  fi
+fi
+
 source ./scripts/functions/exists_command.sh
 source ./scripts/functions/contains_string.sh
-source ./scripts/functions/is_ubuntu.sh
 
 # Directories
 mkdir -p ~/.config/alacritty
