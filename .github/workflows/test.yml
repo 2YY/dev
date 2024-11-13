@@ -30,7 +30,7 @@ jobs:
 
       - name: Cat for Debug
         run: |
-          cat /etc/shells
+          echo $SHELL
 
       - name: Testing by Goss
         run: |
