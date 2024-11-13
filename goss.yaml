@@ -51,7 +51,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "type z":
+  "zoxide --help":
     exit-status: 0
     stdout: []
     stderr: []
