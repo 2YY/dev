@@ -78,7 +78,7 @@ file:
   /etc/shells:
     exists: true
     contents:
-      - "/usr/local/bin/fish"
+      - "/opt/homebrew/bin/fish"
   {{ .Env.HOME }}/.Brewfile:
     exists: true
   {{ .Env.HOME }}/.config/alacritty/alacritty.toml:
