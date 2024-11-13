@@ -7,7 +7,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "ffmpeg -v":
+  "which ffmpeg":
     exit-status: 0
     stdout: []
     stderr: []

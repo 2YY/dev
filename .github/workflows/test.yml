@@ -28,7 +28,6 @@ jobs:
           chmod +x ./scripts/install.sh
           ./scripts/install.sh -n dummy -e dummy@example.com
 
-
       - name: Cat for Debug
         run: |
           cat /usr/local/bin/fish
