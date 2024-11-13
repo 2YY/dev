@@ -15,7 +15,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "fzf -v":
+  "fzf --help":
     exit-status: 0
     stdout: []
     stderr: []
