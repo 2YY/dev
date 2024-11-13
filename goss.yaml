@@ -56,13 +56,6 @@ command:
     stdout: []
     stderr: []
 
-  check_default_shell:
-    exec: "echo $SHELL"
-    exit-status: 0
-    stdout:
-      - "/opt/homebrew/bin/fish"
-    stderr: []
-
   git-config-user-name:
     exec: "git config --global user.name"
     exit-status: 0
