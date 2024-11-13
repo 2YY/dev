@@ -51,7 +51,7 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "which z":
+  "z":
     exit-status: 0
     stdout: []
     stderr: []
