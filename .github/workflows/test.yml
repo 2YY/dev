@@ -28,9 +28,17 @@ jobs:
           chmod +x ./scripts/install.sh
           ./scripts/install.sh -n dummy -e dummy@example.com
 
-      - name: Testing by Goss
+      - name: Testing by Goss (MacOS)
+        if: runner.os == 'macos-latest'
         run: |
-          curl -L https://github.com/goss-org/goss/releases/download/v0.4.7/goss-darwin-arm64 -o goss
+          curl -L https://github.com/goss-org/goss/releases/download/v0.4.9/goss-darwin-arm64 -o goss
+          chmod +x goss
+          ./goss validate -f documentation
+
+      - name: Testing by Goss (Ubuntu)
+        if: runner.os == 'ubuntu-latest'
+        run: |
+          curl -L https://github.com/goss-org/goss/releases/download/v0.4.9/goss-linux-arm64 -o goss
           chmod +x goss
           ./goss validate -f documentation
 
