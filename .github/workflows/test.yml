@@ -38,7 +38,7 @@ jobs:
       - name: Testing by Goss (Ubuntu)
         if: runner.os == 'Linux'
         run: |
-          curl -L https://github.com/goss-org/goss/releases/download/v0.4.9/goss-linux-arm64 -o goss
+          curl -L https://github.com/goss-org/goss/releases/download/v0.4.9/goss-linux-amd64 -o goss
           chmod +x goss
           ./goss validate -f documentation
 
