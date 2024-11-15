@@ -38,6 +38,7 @@ if ! exists_command "brew"; then
   if is_ubuntu; then
     (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> "$HOME/.bashrc"
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    brew install gcc
   fi
 fi
 brew bundle --global
