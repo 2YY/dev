@@ -15,10 +15,9 @@ while getopts "n:e:" opt; do
   esac
 done
 
-if ! exists_command "source"; then
-  if is_ubuntu; then
-    sudo apt-get install -y build-essential checkinstall
-  fi
+# Ubuntu Homebrew Dependencies
+if is_ubuntu; then
+  sudo apt-get install -y build-essential procps curl file git checkinstall
 fi
 
 source ./scripts/functions/exists_command.sh
