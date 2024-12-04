@@ -31,10 +31,6 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "lsd --help":
-    exit-status: 0
-    stdout: []
-    stderr: []
   "mise -v":
     exit-status: 0
     stdout: []
