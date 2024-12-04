@@ -19,10 +19,6 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "gdu-go -v":
-    exit-status: 0
-    stdout: []
-    stderr: []
   "git -v":
     exit-status: 0
     stdout: []
