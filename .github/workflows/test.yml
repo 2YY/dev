@@ -66,7 +66,6 @@ jobs:
       - name: Testing by Goss (MacOS)
         if: runner.os == 'macOS'
         run: |
-          fish
           curl -L https://github.com/goss-org/goss/releases/download/v0.4.9/goss-darwin-arm64 -o goss
           chmod +x goss
           ./goss validate -f documentation
@@ -74,7 +73,6 @@ jobs:
       - name: Testing by Goss (Ubuntu)
         if: runner.os == 'Linux'
         run: |
-          fish
           sed -i 's|/opt/homebrew/bin/fish|/home/linuxbrew/.linuxbrew/bin/fish|' goss.yaml
           curl -L https://github.com/goss-org/goss/releases/download/v0.4.9/goss-linux-amd64 -o goss
           chmod +x goss
