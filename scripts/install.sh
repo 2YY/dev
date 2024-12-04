@@ -52,12 +52,14 @@ if is_ubuntu; then
   mkdir -p ~/.local/bin
   ln -s /usr/bin/batcat ~/.local/bin/bat
 
+  # ffmpeg
+  sudo apt install -y ffmpeg
+
   # fzf
   sudo apt install -y fzf
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat
-  brew install fzf
+  brew install bat ffmpeg fzf
 fi
 brew bundle --global
 
