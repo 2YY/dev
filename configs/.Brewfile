@@ -1,5 +1,4 @@
 # QOL CLI Tools
-brew "bat"
 brew "bottom"
 brew "ffmpeg"
 brew "fish"
