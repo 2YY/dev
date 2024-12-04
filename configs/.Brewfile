@@ -1,5 +1,4 @@
 # QOL CLI Tools
-brew "fish"
 brew "git"
 brew "lsd"
 brew "starship"
