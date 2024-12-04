@@ -40,6 +40,7 @@ if ! exists_command "brew"; then
     brew install gcc
   fi
 fi
+brew install jesseduffield/lazygit/lazygit
 brew bundle --global
 
 # Alacritty
