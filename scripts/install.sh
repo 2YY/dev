@@ -53,8 +53,8 @@ if is_ubuntu; then
   ln -s /usr/bin/batcat ~/.local/bin/bat
 
   # bottom
-  curl -LO https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_arm64.deb
-  sudo dpkg -i bottom_0.10.2-1_arm64.deb
+  curl -LO https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_amd64.deb
+  sudo dpkg -i bottom_0.10.2-1_amd64.deb
 
   # ffmpeg
   sudo apt install -y ffmpeg
