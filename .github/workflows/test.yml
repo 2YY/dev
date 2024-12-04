@@ -28,6 +28,9 @@ jobs:
           chmod +x ./scripts/install.sh
           ./scripts/install.sh -n dummy -e dummy@example.com
 
+      - name: Debug Log
+        run: cat /etc/shells
+
       - name: Testing by Goss (MacOS)
         if: runner.os == 'macOS'
         run: |
