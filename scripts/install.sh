@@ -23,6 +23,11 @@ if is_ubuntu; then
   sudo apt-get install -y build-essential procps curl file git checkinstall
 fi
 
+# Ubuntu Python 3 Dependencies
+if is_ubuntu; then
+  sudo apt install -y zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev
+fi
+
 source ./scripts/functions/exists_command.sh
 source ./scripts/functions/contains_string.sh
 
