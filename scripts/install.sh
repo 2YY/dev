@@ -93,6 +93,7 @@ if is_ubuntu; then
   chmod u+x nvim.appimage
   mkdir -p /opt/nvim
   mv -f nvim.appimage /opt/nvim/nvim
+  sudo apt install -y unzip
 
   # neovim の AppImage を実行するために必要な FUSE のインストール
   sudo add-apt-repository universe
