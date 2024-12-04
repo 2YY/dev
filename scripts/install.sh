@@ -66,7 +66,7 @@ if ! grep -Fxq "$FISH_PATH" /etc/shells; then
       sudo sh -c "echo $FISH_PATH >> /etc/shells"
     fi
 fi
-chsh -s "$FISH_PATH"
+# chsh -s "$FISH_PATH"
 if ! contains_string "fish_greeting" "$HOME/.config/fish/config.fish"; then
   echo 'set fish_greeting' >> ~/.config/fish/config.fish
 fi
