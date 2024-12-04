@@ -1,6 +1,5 @@
 # QOL CLI Tools
 brew "bottom"
-brew "ffmpeg"
 brew "fish"
 brew "gdu"
 brew "git"
