@@ -90,6 +90,10 @@ if is_ubuntu; then
   mkdir -p /opt/nvim
   mv -f nvim.appimage /opt/nvim/nvim
 
+  # neovim の AppImage を実行するために必要な FUSE のインストール
+  sudo add-apt-repository universe
+  sudo apt install libfuse2
+
   # ripgrep
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
   sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
