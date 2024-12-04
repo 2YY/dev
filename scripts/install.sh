@@ -51,9 +51,13 @@ if is_ubuntu; then
   sudo apt install -y bat
   mkdir -p ~/.local/bin
   ln -s /usr/bin/batcat ~/.local/bin/bat
+
+  # fzf
+  sudo apt install -y fzf
 else
   brew install jesseduffield/lazygit/lazygit
   brew install bat
+  brew install fzf
 fi
 brew bundle --global
 
