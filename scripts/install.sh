@@ -52,6 +52,10 @@ if is_ubuntu; then
   mkdir -p ~/.local/bin
   ln -s /usr/bin/batcat ~/.local/bin/bat
 
+  # bottom
+  curl -LO https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_arm64.deb
+  sudo dpkg -i bottom_0.10.2-1_arm64.deb
+
   # ffmpeg
   sudo apt install -y ffmpeg
 
@@ -67,7 +71,7 @@ if is_ubuntu; then
   sudo apt install -y mise
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat ffmpeg fzf mise
+  brew install bat bottom ffmpeg fzf mise
 fi
 brew bundle --global
 
