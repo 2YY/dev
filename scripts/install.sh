@@ -62,6 +62,9 @@ if is_ubuntu; then
   # fzf
   sudo apt install -y fzf
 
+  # lsd
+  sudo apt install -y lsd
+
   # mise
   apt update -y && apt install -y gpg sudo wget curl
   sudo install -dm 755 /etc/apt/keyrings
@@ -71,7 +74,7 @@ if is_ubuntu; then
   sudo apt install -y mise
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat bottom ffmpeg fzf mise
+  brew install bat bottom ffmpeg fzf lsd mise
 fi
 brew bundle --global
 
