@@ -1,3 +1,5 @@
+tap "jesseduffield/lazygit/lazygit"
+
 # QOL CLI Tools
 brew "bat"
 brew "bottom"
@@ -6,7 +8,7 @@ brew "fish"
 brew "fzf"
 brew "gdu"
 brew "git"
-brew "jesseduffield/lazygit/lazygit"
+brew "lazygit"
 brew "lsd"
 brew "mise"
 brew "neovim"
