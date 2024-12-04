@@ -2,7 +2,6 @@
 brew "git"
 brew "lsd"
 brew "starship"
-brew "zoxide"
 
 # QOL Apps
 cask "1password"
