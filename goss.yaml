@@ -47,10 +47,6 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
-  "starship --help":
-    exit-status: 0
-    stdout: []
-    stderr: []
   "zoxide --help":
     exit-status: 0
     stdout: []
