@@ -2,6 +2,7 @@
 brew "fish"
 brew "gdu"
 brew "git"
+brew "lsd"
 brew "neovim"
 brew "ripgrep"
 brew "starship"
