@@ -7,7 +7,6 @@ brew "lsd"
 brew "mise"
 brew "neovim"
 brew "ripgrep"
-brew "starship"
 brew "zoxide"
 
 # QOL Apps
