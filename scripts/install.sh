@@ -92,7 +92,7 @@ if is_ubuntu; then
 
   # neovim の AppImage を実行するために必要な FUSE のインストール
   sudo add-apt-repository universe
-  sudo apt install libfuse2
+  sudo apt -y install libfuse2
 
   # ripgrep
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
