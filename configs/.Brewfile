@@ -1,15 +1,7 @@
 # QOL CLI Tools
-brew "bat"
-brew "ffmpeg"
-brew "fish"
-brew "fzf"
 brew "git"
 brew "lsd"
-brew "mise"
-brew "neovim"
-brew "ripgrep"
 brew "starship"
-brew "zoxide"
 
 # QOL Apps
 cask "1password"

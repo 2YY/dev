@@ -8,3 +8,6 @@ family = "JetBrainsMono Nerd Font"
 x = 0
 y = 6
 
+[shell]
+program = "/usr/local/bin/fish"
+args = ["--login"]
