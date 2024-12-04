@@ -69,9 +69,13 @@ if is_ubuntu; then
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
   sudo apt update
   sudo apt install -y mise
+
+  # ripgrep
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+  sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat bottom ffmpeg fzf mise
+  brew install bat bottom ffmpeg fzf mise ripgrep
 fi
 brew bundle --global
 
