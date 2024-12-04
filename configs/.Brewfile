@@ -1,5 +1,4 @@
 # QOL CLI Tools
-brew "bottom"
 brew "fish"
 brew "gdu"
 brew "git"
