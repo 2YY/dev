@@ -78,12 +78,19 @@ if is_ubuntu; then
   sudo apt update
   sudo apt install -y mise
 
+  # neovim
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+  chmod u+x nvim.appimage
+  ./nvim.appimage
+  mkdir -p /opt/nvim
+  mv -f nvim.appimage /opt/nvim/nvim
+
   # ripgrep
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
   sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat bottom ffmpeg fzf gdu mise ripgrep
+  brew install bat bottom ffmpeg fzf gdu mise neovim ripgrep
 fi
 brew bundle --global
 
