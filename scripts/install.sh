@@ -30,22 +30,6 @@ mkdir -p ~/.config/fish
 # Files
 [ ! -f "$HOME/.config/fish/config.fish" ] && touch "$HOME/.config/fish/config.fish"
 
-# fish
-FISH_PATH=$(which fish)
-if ! grep -Fxq "$FISH_PATH" /etc/shells; then
-    if ! grep -Fxq "$FISH_PATH" /etc/shells; then
-      sudo sh -c "echo $FISH_PATH >> /etc/shells"
-    fi
-fi
-chsh -s "$FISH_PATH"
-if ! contains_string "fish_greeting" "$HOME/.config/fish/config.fish"; then
-  echo 'set fish_greeting' >> ~/.config/fish/config.fish
-fi
-if ! contains_string "accept-autosuggestion" "$HOME/.config/fish/config.fish"; then
-  printf 'bind \\t accept-autosuggestion\n' >> "$HOME/.config/fish/config.fish"
-fi
-fish
-
 # Homebrew
 cp -f ./configs/.Brewfile ~/.Brewfile
 if ! exists_command "brew"; then
@@ -75,6 +59,21 @@ mise use -g python@3
 xcode-select --install || true
 npm install -g node-gyp @devcontainers/cli
 
+# fish
+FISH_PATH=$(which fish)
+if ! grep -Fxq "$FISH_PATH" /etc/shells; then
+    if ! grep -Fxq "$FISH_PATH" /etc/shells; then
+      sudo sh -c "echo $FISH_PATH >> /etc/shells"
+    fi
+fi
+chsh -s "$FISH_PATH"
+if ! contains_string "fish_greeting" "$HOME/.config/fish/config.fish"; then
+  echo 'set fish_greeting' >> ~/.config/fish/config.fish
+fi
+if ! contains_string "accept-autosuggestion" "$HOME/.config/fish/config.fish"; then
+  printf 'bind \\t accept-autosuggestion\n' >> "$HOME/.config/fish/config.fish"
+fi
+
 # Git
 if [ -n "$GIT_USER_NAME" ] && [ -n "$GIT_USER_EMAIL" ]; then
   git config --global user.name "$GIT_USER_NAME"
@@ -91,4 +90,3 @@ fi
 if ! contains_string "zoxide" "$HOME/.config/fish/config.fish"; then
   echo 'zoxide init fish | source' >> ~/.config/fish/config.fish
 fi
-
