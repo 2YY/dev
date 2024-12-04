@@ -62,6 +62,11 @@ if is_ubuntu; then
   # fzf
   sudo apt install -y fzf
 
+  # gdu
+  add-apt-repository ppa:daniel-milde/gdu
+  apt-get update
+  apt-get install gdu
+
   # mise
   apt update -y && apt install -y gpg sudo wget curl
   sudo install -dm 755 /etc/apt/keyrings
@@ -75,7 +80,7 @@ if is_ubuntu; then
   sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat bottom ffmpeg fzf mise ripgrep
+  brew install bat bottom ffmpeg fzf gdu mise ripgrep
 fi
 brew bundle --global
 
