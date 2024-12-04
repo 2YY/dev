@@ -62,6 +62,11 @@ if is_ubuntu; then
   # ffmpeg
   sudo apt install -y ffmpeg
 
+  # fish
+  sudo add-apt-repository ppa:fish-shell/release-3
+  sudo apt update
+  sudo apt install -y fish
+
   # fzf
   sudo apt install -y fzf
 
@@ -90,7 +95,7 @@ if is_ubuntu; then
   sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat bottom ffmpeg fzf gdu mise neovim ripgrep
+  brew install bat bottom ffmpeg fish fzf gdu mise neovim ripgrep
 fi
 brew bundle --global
 
