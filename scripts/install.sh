@@ -93,9 +93,12 @@ if is_ubuntu; then
   # ripgrep
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
   sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
+
+  # zoxide
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat bottom ffmpeg fish fzf gdu mise neovim ripgrep
+  brew install bat bottom ffmpeg fish fzf gdu mise neovim ripgrep zoxide
 fi
 brew bundle --global
 
