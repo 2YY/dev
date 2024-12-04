@@ -57,9 +57,12 @@ if is_ubuntu; then
 
   # fzf
   sudo apt install -y fzf
+
+  # starship
+  curl -sS https://starship.rs/install.sh | sh
 else
   brew install jesseduffield/lazygit/lazygit
-  brew install bat ffmpeg fzf
+  brew install bat ffmpeg fzf starship
 fi
 brew bundle --global
 
