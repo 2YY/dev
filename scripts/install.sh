@@ -15,6 +15,9 @@ while getopts "n:e:" opt; do
   esac
 done
 
+# 前回実行時に作成された一時ファイルが有れば削除しておきます。
+command -v git &> /dev/null && git reset --hard HEAD && git clean -fd
+
 # Ubuntu Homebrew Dependencies
 if is_ubuntu; then
   sudo apt-get install -y build-essential procps curl file git checkinstall
