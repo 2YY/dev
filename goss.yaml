@@ -1,5 +1,5 @@
 command:
-  "which bat":
+  "bat --help":
     exit-status: 0
     stdout: []
     stderr: []
