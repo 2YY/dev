@@ -39,6 +39,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sed -i 's|/opt/homebrew/bin/fish|/home/linuxbrew/.linuxbrew/bin/fish|' goss.yaml
+          sed -i 's|"gdu-go -v":|"gdu -v":|' goss.yml
           curl -L https://github.com/goss-org/goss/releases/download/v0.4.9/goss-linux-amd64 -o goss
           chmod +x goss
           ./goss validate -f documentation
