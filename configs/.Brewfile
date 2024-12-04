@@ -2,7 +2,6 @@
 brew "fish"
 brew "git"
 brew "lsd"
-brew "neovim"
 brew "starship"
 brew "zoxide"
 
