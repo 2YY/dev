@@ -87,6 +87,7 @@ if is_ubuntu; then
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
   sudo apt update
   sudo apt install -y mise
+  echo '/usr/bin/mise activate fish | source' >> ~/.config/fish/config.fish
 
   # neovim
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
