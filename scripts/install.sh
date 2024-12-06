@@ -95,7 +95,6 @@ if is_ubuntu; then
   mkdir -p /opt/nvim
   mv -f nvim.appimage /opt/nvim/nvim
   sudo apt install -y unzip
-  export PATH="$PATH:/opt/nvim/"
 
   # neovim の AppImage を実行するために必要な FUSE のインストール
   sudo add-apt-repository universe
@@ -160,4 +159,10 @@ fi
 # zoxide
 if ! contains_string "zoxide" "$HOME/.config/fish/config.fish"; then
   echo 'zoxide init fish | source' >> ~/.config/fish/config.fish
+fi
+
+# Ubuntu で Neovim のパスを通す
+if is_ubuntu; then
+  fish
+  fish_add_path /opt/nvim/
 fi
