@@ -23,6 +23,11 @@ if is_ubuntu; then
   sudo apt-get install -y build-essential procps curl file git checkinstall
 fi
 
+# Ubuntu Python 3 Dependencies
+if is_ubuntu; then
+  sudo apt install -y zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev
+fi
+
 source ./scripts/functions/exists_command.sh
 source ./scripts/functions/contains_string.sh
 
@@ -82,13 +87,14 @@ if is_ubuntu; then
   echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
   sudo apt update
   sudo apt install -y mise
+  echo '/usr/bin/mise activate fish | source' >> ~/.config/fish/config.fish
 
   # neovim
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
   chmod u+x nvim.appimage
-  ./nvim.appimage
   mkdir -p /opt/nvim
   mv -f nvim.appimage /opt/nvim/nvim
+  sudo apt install -y unzip
 
   # neovim の AppImage を実行するために必要な FUSE のインストール
   sudo add-apt-repository universe
@@ -153,4 +159,9 @@ fi
 # zoxide
 if ! contains_string "zoxide" "$HOME/.config/fish/config.fish"; then
   echo 'zoxide init fish | source' >> ~/.config/fish/config.fish
+fi
+
+# Ubuntu で Neovim のパスを通す
+if is_ubuntu; then
+  fish -c "fish_add_path /opt/nvim"
 fi

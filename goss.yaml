@@ -31,6 +31,10 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
+  "nvim -v":
+    exit-status: 0
+    stdout: []
+    stderr: []
   "rg --help":
     exit-status: 0
     stdout: []
