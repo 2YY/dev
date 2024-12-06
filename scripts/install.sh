@@ -163,6 +163,5 @@ fi
 
 # Ubuntu で Neovim のパスを通す
 if is_ubuntu; then
-  fish
-  fish_add_path /opt/nvim/
+  fish -c "fish_add_path /opt/nvim"
 fi
