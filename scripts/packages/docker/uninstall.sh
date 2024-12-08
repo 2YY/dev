@@ -1,1 +1,1 @@
-
+brew uninstall --cask rancher
