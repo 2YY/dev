@@ -1,4 +1,5 @@
 if is_ubuntu; then
+  # NOTE: apt のリポジトリを予めセットアップしておく
   sudo apt-get update
   sudo apt-get install ca-certificates curl
   sudo install -m 0755 -d /etc/apt/keyrings
@@ -9,6 +10,8 @@ if is_ubuntu; then
     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   sudo apt-get update
+  
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 else
   brew install --cask rancher
 fi
