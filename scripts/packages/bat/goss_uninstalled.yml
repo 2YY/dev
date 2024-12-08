@@ -1,1 +1,6 @@
-
+command:
+  bat:
+    exists: false
+file:
+  ~/.local/bin/bat:
+    exists: false
