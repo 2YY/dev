@@ -3,3 +3,8 @@ command:
     exit-status: 0
     stdout: []
     stderr: []
+file:
+  ~/.local/bin/bat:
+    exists: true
+    is_symlink: true
+    linked_to: "/usr/bin/batcat"
