@@ -1,1 +1,26 @@
+#!/bin/bash
 
+source scripts/functions/error.sh
+source scripts/functions/file_exists.sh
+
+INSTALL_SCRIPT="scripts/install.sh"
+UNINSTALL_SCRIPT="scripts/uninstall.sh"
+file_exists "$INSTALL_SCRIPT"
+file_exists "$UNINSTALL_SCRIPT"
+
+COMMAND=$1
+if [ -z "$COMMAND" ]; then
+    error "コマンドが指定されていません。"
+fi
+
+case "$COMMAND" in
+    install)
+        bash "$INSTALL_SCRIPT"
+        ;;
+    uninstall)
+        bash "$UNINSTALL_SCRIPT"
+        ;;
+    *)
+        error "未知のコマンド '$COMMAND' が指定されました。"
+        ;;
+esac
