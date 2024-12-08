@@ -1,1 +1,5 @@
-
+command:
+  "bat --help":
+    exit-status: 0
+    stdout: []
+    stderr: []
