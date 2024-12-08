@@ -1,1 +1,1 @@
-brew cask install rancher
+brew install --cask rancher
