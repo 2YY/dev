@@ -15,10 +15,10 @@ fi
 
 case "$COMMAND" in
     install)
-        bash "$INSTALL_SCRIPT"
+        bash "$INSTALL_SCRIPT" "${@:2}"
         ;;
     uninstall)
-        bash "$UNINSTALL_SCRIPT"
+        bash "$UNINSTALL_SCRIPT" "${@:2}"
         ;;
     *)
         error "未知のコマンド '$COMMAND' が指定されました。"
