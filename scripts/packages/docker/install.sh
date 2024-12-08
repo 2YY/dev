@@ -1,5 +1,3 @@
-brew install --cask rancher
-
 if is_ubuntu; then
   sudo apt-get update
   sudo apt-get install ca-certificates curl
