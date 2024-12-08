@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
     error "パッケージ名が指定されていません。"
 fi
 
-PACKAGE_SCRIPT="scripts/uninstallers/$1.sh"
+PACKAGE_SCRIPT="scripts/packages/$1/uninstall.sh"
 file_exists "$PACKAGE_SCRIPT"
 
 bash "$PACKAGE_SCRIPT"
