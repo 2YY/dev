@@ -1,8 +1,6 @@
 command:
-  "bat --help":
-    exit-status: 0
-    stdout: []
-    stderr: []
+  bat:
+    exists: true
 file:
   ~/.local/bin/bat:
     exists: true
