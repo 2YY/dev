@@ -1,0 +1,5 @@
+command:
+  docker:
+    exists: true
+  docker-compose:
+    exists: true
