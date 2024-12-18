@@ -1,7 +1,6 @@
 # NOTE: 動作のために /dev/kvm に対する権限が必要。権限が無ければ設定しておく。
-[ -r /dev/kvm ] && [ -w /dev/kvm ] || { 
-  echo 'insufficient privileges'; 
-  sudo usermod -a -G kvm "$USER"; 
+[ -r /dev/kvm ] && [ -w /dev/kvm ] || {
+  sudo usermod -a -G kvm "$USER";
 }
 
 # NOTE: Rancher Desktop のリポジトリを追加し、そこ経由で Rancher Desktop をインストール。
